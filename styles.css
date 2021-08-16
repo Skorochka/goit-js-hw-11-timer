@@ -1,0 +1,50 @@
+:root {
+  --first-color: #c0acd9;
+  --main-text-color: #9469cc;
+  --text-color: #421e71;
+  --background: #1e1825;
+  --white: #fff;
+}
+
+body {
+  text-align: center;
+  background: var(--first-color);
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.countdown-title {
+  color: var(--main-text-color);
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+
+.timer {
+  font-family: sans-serif;
+  color: var(--white);
+  display: inline-block;
+  font-weight: 100;
+  text-align: center;
+  font-size: 30px;
+}
+
+.field {
+  padding: 10px;
+  border-radius: 3px;
+  background: var(--text-color);
+  display: inline-block;
+}
+
+.value {
+  padding: 15px;
+  border-radius: 3px;
+  background: var(--background);
+  display: inline-block;
+}
+
+.label {
+  display: block;
+  padding-top: 5px;
+  font-size: 16px;
+}
