@@ -1,15 +1,28 @@
 
 class CountdownTimer {
     constructor({selector, targetDate}) {
-        this.refs = {
-            valueDays: document.querySelector('span[data-value="days"]'),
-            valueHours: document.querySelector('span[data-value="hours"]'),
-            valueMins: document.querySelector('span[data-value="mins"]'),
-            valueSecs: document.querySelector('span[data-value="secs"]'),
+        this.root = {
+            rootSelector: document.querySelector(selector),
         }
+
+
+        this.refs = {
+           
+            // rootSelector: document.querySelector(selector),
+            // valueDays: rootSelector.querySelector('span[data-value="days"]'), 
+            // не могу понять почему запись выше не работает - если rootSelector в this.refs находить, 
+            //а потом через него обращаться и искать valueDays/valueHours и тд - пришлось вынести его отдельно
+
+            valueDays: this.root.rootSelector.querySelector('span[data-value="days"]'),
+            valueHours: this.root.rootSelector.querySelector('span[data-value="hours"]'),
+            valueMins: this.root.rootSelector.querySelector('span[data-value="mins"]'),
+            valueSecs: this.root.rootSelector.querySelector('span[data-value="secs"]'),
+        }
+
         setInterval(this.startTimer, 1000)
 
         this.targetDate = targetDate
+        this.selector = selector
     }
 
     startTimer = () => {
